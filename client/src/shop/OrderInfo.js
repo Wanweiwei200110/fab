@@ -42,14 +42,14 @@ class OrderInfo extends Component {
         }
 
         //fetch post request
-        await fetch('/' + this.props.user + '/order/post', {
+        await fetch('/api/' + this.props.user + '/order/post', {
           method: 'POST',
           body: JSON.stringify({username: this.props.user, firstname: this.state.firstName, lastname: this.state.lastName, email: this.state.email, phoneNum: this.state.phone, address: this.state.address, province: this.state.province, items: items, total: this.state.total}),
           headers: {'Content-Type': 'application/json'}
         });
 
         // clean up this user's cart
-        await fetch('/' + this.props.user + '/cart/clean', {
+        await fetch('/api/' + this.props.user + '/cart/clean', {
           method: 'PATCH',
           body: JSON.stringify({username: this.props.user}),
           headers: {'Content-Type': 'application/json'}

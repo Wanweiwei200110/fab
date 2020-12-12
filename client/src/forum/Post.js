@@ -27,13 +27,13 @@ class Post extends Component {
     toggleLike = () => {
         try {
             if (this.state.liked) {
-                fetch('/forum/' + this.state.post_id + '/unlike', {
+                fetch('/api/forum/' + this.state.post_id + '/unlike', {
                     method: 'PATCH',
                     body: JSON.stringify({username: this.props.user}),
                     headers: { 'Content-Type': 'application/json' }
                 })
             } else {
-                fetch('/forum/' + this.state.post_id + '/like', {
+                fetch('/api/forum/' + this.state.post_id + '/like', {
                     method: 'PATCH',
                     body: JSON.stringify({username: this.props.user}),
                     headers: { 'Content-Type': 'application/json' }
@@ -50,13 +50,13 @@ class Post extends Component {
     toggleCollect = () => {
         try {
             if (this.state.collected) {
-                fetch('/forum/' + this.state.post_id + '/uncollect', {
+                fetch('/api/forum/' + this.state.post_id + '/uncollect', {
                     method: 'PATCH',
                     body: JSON.stringify({username: this.props.user}),
                     headers: { 'Content-Type': 'application/json' }
                 })
             } else {
-                fetch('/forum/' + this.state.post_id + '/collect', {
+                fetch('/api/forum/' + this.state.post_id + '/collect', {
                     method: 'PATCH',
                     body: JSON.stringify({username: this.props.user}),
                     headers: { 'Content-Type': 'application/json' }
@@ -79,7 +79,7 @@ class Post extends Component {
             let down
             let votes = this.state.comments[i].votes
             if (action === 'upvote') {
-                fetch('/' + id + '/comment', {
+                fetch('/api/' + id + '/comment', {
                     method: 'PATCH',
                     body: JSON.stringify({username: this.props.user, action, downvoted}),
                     headers: { 'Content-Type': 'application/json' }
@@ -90,7 +90,7 @@ class Post extends Component {
             }
             
             else if (action === 'downvote') {
-                fetch('/' + id + '/comment', {
+                fetch('/api/' + id + '/comment', {
                     method: 'PATCH',
                     body: JSON.stringify({username: this.props.user, action, upvoted}),
                     headers: { 'Content-Type': 'application/json' }
@@ -112,7 +112,7 @@ class Post extends Component {
     reportPost = (e) => {
         try {
             e.preventDefault()
-            fetch('/forum/' + this.state.post_id + '/report', {
+            fetch('/api/forum/' + this.state.post_id + '/report', {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' }
             })
@@ -132,14 +132,14 @@ class Post extends Component {
         try {
             let numFollowers = this.state.author.numFollowers
             if (this.state.following) {
-                fetch('/' + this.state.author.username + '/unfollow', {
+                fetch('/api/' + this.state.author.username + '/unfollow', {
                     method: 'PATCH',
                     body: JSON.stringify({username: this.props.user}),
                     headers: { 'Content-Type': 'application/json' }
                 })
                 numFollowers -= 1
             } else {
-                fetch('/' + this.state.author.username + '/follow', {
+                fetch('/api/' + this.state.author.username + '/follow', {
                     method: 'PATCH',
                     body: JSON.stringify({username: this.props.user}),
                     headers: { 'Content-Type': 'application/json' }
@@ -158,19 +158,19 @@ class Post extends Component {
     async componentDidMount() {
         try {
             // get post data from backend 
-            const post_response = await fetch('/forum/' + this.state.post_id + '/' + this.props.user, {
+            const post_response = await fetch('/api/forum/' + this.state.post_id + '/' + this.props.user, {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             })
             const post_data = await post_response.json()
 
             // get author data from backend 
-            const author_response = await fetch('/forum/' + this.state.post_id + '/author/' + this.props.user, {
+            const author_response = await fetch('/api/forum/' + this.state.post_id + '/author/' + this.props.user, {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             })
             const author_data = await author_response.json()
-            const comments_response = await fetch('/' + this.state.post_id + '/comments/' + this.props.user, {
+            const comments_response = await fetch('/api/' + this.state.post_id + '/comments/' + this.props.user, {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             })

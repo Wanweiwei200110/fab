@@ -25,7 +25,7 @@ class Profile extends Component {
             this.setState({
                 intro
             })
-            fetch('/' + this.state.username + '/intro', {
+            fetch('/api/' + this.state.username + '/intro', {
                 method: 'PATCH',
                 body: JSON.stringify({ intro }),
                 headers: {'Content-Type': 'application/json'}
@@ -49,7 +49,7 @@ class Profile extends Component {
             this.setState({
                 followings
             })
-            fetch('/' + user + '/unfollow', {
+            fetch('/api/' + user + '/unfollow', {
                 method: 'PATCH',
                 body: JSON.stringify({ username: this.state.username }),
                 headers: { 'Content-Type': 'application/json' }
@@ -63,22 +63,22 @@ class Profile extends Component {
         try{
             const username = this.props.match.params.username
             
-            const profile = await fetch('/' + username + '/get', {
+            const profile = await fetch('/api/' + username + '/get', {
                 headers: {'Content-Type': 'application/json'}
             });
             const profile_data = await profile.json()
 
-            const followings = await fetch('/' + username + '/followings', {
+            const followings = await fetch('/api/' + username + '/followings', {
                 headers: {'Content-Type': 'application/json'}
             });
             const followings_data = await followings.json()
 
-            const followers = await fetch('/' + username + '/followers', {
+            const followers = await fetch('/api/' + username + '/followers', {
                 headers: {'Content-Type': 'application/json'}
             });
             const followers_data = await followers.json()
 
-            const order_history = await fetch('/' + username + '/orders/get', {
+            const order_history = await fetch('/api/' + username + '/orders/get', {
                 headers: {'Content-Type': 'application/json'}
             });
             const order_history_data = await order_history.json()
@@ -92,7 +92,7 @@ class Profile extends Component {
                 followers: followers_data,
                 loading: false
             })
-            const res = await fetch('/' + username + '/posts/get', {
+            const res = await fetch('/api/' + username + '/posts/get', {
                 headers: {'Content-Type': 'application/json'}
             })
             const val = await res.json()
@@ -111,7 +111,7 @@ class Profile extends Component {
             const ref = firebase.storage().ref('profilePics/' + this.state.username)
             await ref.put(file)
             const url = await ref.getDownloadURL()
-            fetch('/api/profile/' + this.state.username, {
+            fetch('/api/api/profile/' + this.state.username, {
                 method: 'POST',
                 body: JSON.stringify({ url }),
                 headers: { 'Content-Type': 'application/json' }

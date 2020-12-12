@@ -2,7 +2,7 @@
 export const loginUser = (username, password, props) => {
     return async (dispatch, getState) => {
         try {
-            const response = await fetch('/login', {
+            const response = await fetch('/api/login', {
                 method: 'POST',
                 body: JSON.stringify({ username, password }),
                 headers: { 'Content-Type': 'application/json' }
@@ -30,7 +30,7 @@ export const loginUser = (username, password, props) => {
 export const signUpUser = (username, password, props) => {
     return async (dispatch, getState) => {
         try {
-            const response = await fetch('/signup', {
+            const response = await fetch('/api/signup', {
                 method: 'POST',
                 body: JSON.stringify({ username, password, usertype: 'user' }),
                 headers: { 'Content-Type': 'application/json' }
@@ -44,7 +44,7 @@ export const signUpUser = (username, password, props) => {
             }
             if (data.username) {
                 dispatch({ type: "LOGIN", username: data.username, usertype: 'user', profilePic: data.profilePic})
-                props.history.push('/')
+                props.history.push('api')
             }
         } catch (err) {
             console.log(err)
@@ -55,7 +55,7 @@ export const signUpUser = (username, password, props) => {
 export const logOutUser = (props) => {
     return async (dispatch, getState) => {
         try {
-            await fetch('/logout')
+            await fetch('/api/logout')
             dispatch({ type: "LOGOUT"})
         } catch (err) {
             console.log(err)

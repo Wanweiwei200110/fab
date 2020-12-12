@@ -17,13 +17,13 @@ class AdminHome extends Component {
 
     async componentDidMount() {
         try {
-            const posts = await fetch('/forum/reported', {
+            const posts = await fetch('/api/forum/reported', {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             })
             const post_data = await posts.json()
 
-            const comments = await fetch('/comments/reported', {
+            const comments = await fetch('/api/comments/reported', {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             })
@@ -42,7 +42,7 @@ class AdminHome extends Component {
     deletePost(e, id) {
         try {
             e.preventDefault()
-            fetch('/forum/' + id, {
+            fetch('/api/forum/' + id, {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' }
             })
@@ -62,7 +62,7 @@ class AdminHome extends Component {
     unreportPost(e, id) {
         try {
             e.preventDefault()
-            fetch('/forum/' + id + '/unreport', {
+            fetch('/api/forum/' + id + '/unreport', {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' }
             })
@@ -82,7 +82,7 @@ class AdminHome extends Component {
     deleteComment(e, id) {
         try {
             e.preventDefault()
-            fetch('/comment/' + id, {
+            fetch('/api/comment/' + id, {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' }
             })
@@ -102,7 +102,7 @@ class AdminHome extends Component {
     unreportComment(e, id) {
         try {
             e.preventDefault()
-            fetch('/comment/' + id + '/unreport', {
+            fetch('/api/comment/' + id + '/unreport', {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' }
             })

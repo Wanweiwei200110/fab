@@ -12,7 +12,7 @@ class Comments extends Component {
     reportComment = (e, id) => {
         try {
             e.preventDefault()
-            fetch('/comment/' + id + '/report', {
+            fetch('/api/comment/' + id + '/report', {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' }
             })

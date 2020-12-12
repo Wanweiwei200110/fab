@@ -20,7 +20,7 @@ class Forum extends Component {
 
     async componentDidMount() {
         try {
-            const response = await fetch('/forum', {
+            const response = await fetch('/api/forum', {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             })

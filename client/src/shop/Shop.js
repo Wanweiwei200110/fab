@@ -20,7 +20,7 @@ class Shop extends Component {
     async componentDidMount() {
 
         try {
-            const response = await fetch('/shop', {
+            const response = await fetch('/api/shop', {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             })

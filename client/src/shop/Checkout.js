@@ -13,7 +13,7 @@ class Checkout extends Component {
 
     async componentDidMount() {
         try {
-            const res = await fetch('/' + this.props.user + '/cart', {
+            const res = await fetch('/api/' + this.props.user + '/cart', {
                 headers: {'Content-Type': 'application/json'}
             });
             const cart_data = await res.json()

@@ -15,7 +15,7 @@ class Cart extends Component {
         try {
             let cart
             if (qty !== this.state.cart[i].qty) {
-                fetch('/shop/' + id + '/cart', {
+                fetch('/api/shop/' + id + '/cart', {
                     method: 'PATCH',
                     body: JSON.stringify({username: this.props.user, qty}),
                     headers: { 'Content-Type': 'application/json' }
@@ -42,7 +42,7 @@ class Cart extends Component {
 
     async componentDidMount() {
         try {
-            const res = await fetch('/' + this.props.user + '/cart', {
+            const res = await fetch('/api/' + this.props.user + '/cart', {
                 headers: {'Content-Type': 'application/json'}
             });
             const cart_data = await res.json()

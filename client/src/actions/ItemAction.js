@@ -3,7 +3,7 @@ import firebase from "firebase"
 export const createNewItem = (title, body, images, price, props) => {
     return async (dispatch, getState) => {
         try {
-            const response = await fetch('/shop', {
+            const response = await fetch('/api/shop', {
                 method: 'POST',
                 body: JSON.stringify({
                     title: title,
@@ -32,7 +32,7 @@ export const createNewItem = (title, body, images, price, props) => {
             let urls = []
             await uploadPic()
 
-            await fetch('/shop/' + data.id + '/pics', {
+            await fetch('/api/shop/' + data.id + '/pics', {
                 method: 'PATCH',
                 body: JSON.stringify({ urls }),
                 headers: { 'Content-Type': 'application/json' }

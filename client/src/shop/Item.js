@@ -27,13 +27,13 @@ class Item extends Component {
     toggleCollect = () => {
         try {
             if (this.state.collected) {
-                fetch('/shop/' + this.state.item_id + '/uncollect', {
+                fetch('/api/shop/' + this.state.item_id + '/uncollect', {
                     method: 'PATCH',
                     body: JSON.stringify({username: this.props.user}),
                     headers: { 'Content-Type': 'application/json' }
                 })
             } else {
-                fetch('/shop/' + this.state.item_id + '/collect', {
+                fetch('/api/shop/' + this.state.item_id + '/collect', {
                     method: 'PATCH',
                     body: JSON.stringify({username: this.props.user}),
                     headers: { 'Content-Type': 'application/json' }
@@ -50,13 +50,13 @@ class Item extends Component {
     toggleCart = () => {
         try {
             if (this.state.inCart) {
-                fetch('/shop/' + this.state.item_id + '/cart', {
+                fetch('/api/shop/' + this.state.item_id + '/cart', {
                     method: 'PATCH',
                     body: JSON.stringify({username: this.props.user, qty: 0}),
                     headers: { 'Content-Type': 'application/json' }
                 })
             } else {
-                fetch('/shop/' + this.state.item_id + '/cart', {
+                fetch('/api/shop/' + this.state.item_id + '/cart', {
                     method: 'PATCH',
                     body: JSON.stringify({username: this.props.user, qty: 1}),
                     headers: { 'Content-Type': 'application/json' }
@@ -81,7 +81,7 @@ class Item extends Component {
             let votes = this.state.comments[i].votes
             if (action === 'upvote') {
                 console.log('upvote')
-                fetch('/' + id + '/comment', {
+                fetch('/api/' + id + '/comment', {
                     method: 'PATCH',
                     body: JSON.stringify({username: this.props.user, action, downvoted}),
                     headers: { 'Content-Type': 'application/json' }
@@ -92,7 +92,7 @@ class Item extends Component {
             }
             
             else if (action === 'downvote') {
-                fetch('/' + id + '/comment', {
+                fetch('/api/' + id + '/comment', {
                     method: 'PATCH',
                     body: JSON.stringify({username: this.props.user, action, upvoted}),
                     headers: { 'Content-Type': 'application/json' }
@@ -113,13 +113,13 @@ class Item extends Component {
     async componentDidMount() {
         try {
             // get post data from backend 
-            const post_response = await fetch('/shop/' + this.state.item_id + '/' + this.props.user, {
+            const post_response = await fetch('/api/shop/' + this.state.item_id + '/' + this.props.user, {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             })
             const post_data = await post_response.json()
 
-            const comments_response = await fetch('/' + this.state.item_id + '/comments/' + this.props.user, {
+            const comments_response = await fetch('/api/' + this.state.item_id + '/comments/' + this.props.user, {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             })

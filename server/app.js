@@ -52,10 +52,10 @@ mongoose.connection.on('connected', () => {
 // routes
 
 app.use(loginSignupRoutes);
-app.use(userRoutes);
-app.use(postRoutes);
-app.use(itemRoutes);
-app.use(commentRoutes);
+app.use('/api', userRoutes);
+app.use('/api', postRoutes);
+app.use('/api', itemRoutes);
+app.use('/api', commentRoutes);
 app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, '../client/build', 'index.html')));
 
 if (process.env.NODE_ENV === 'production') {

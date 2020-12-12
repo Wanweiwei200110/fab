@@ -12,18 +12,18 @@ class Collections extends Component {
         try{
             const username = this.props.match.params.username
 
-            const user = await fetch('/' + username + '/get', {
+            const user = await fetch('/api/' + username + '/get', {
                 headers: {'Content-Type': 'application/json'}
             });
 
             const user_data = await user.json()
             
-            const posts = await fetch('/' + username + '/collections/post', {
+            const posts = await fetch('/api/' + username + '/collections/post', {
                 headers: {'Content-Type': 'application/json'}
             });
             const posts_data = await posts.json()
 
-            const items = await fetch('/' + username + '/collections/item', {
+            const items = await fetch('/api/' + username + '/collections/item', {
                 headers: {'Content-Type': 'application/json'}
             });
             const items_data = await items.json()
