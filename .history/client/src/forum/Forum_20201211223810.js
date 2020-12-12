@@ -47,7 +47,7 @@ class Forum extends Component {
             return (
                 <Container>
                     <Container>
-                        <img id='fabImage' src='https://firebasestorage.googleapis.com/v0/b/csc309-5e855.appspot.com/o/profilePics%2Ffab.png?alt=media&token=3d73949d-d44c-4c56-b833-9450c1238fa4' alt="display"></img>
+                        <img id='fabImage' src='../../assets/fab.PNG' alt="display"></img>
                         <h1 id='fab' className='center'>F.A.B</h1>
                     </Container>
                     <br></br>                
