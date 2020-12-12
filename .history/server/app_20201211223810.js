@@ -51,7 +51,7 @@ mongoose.connection.on('connected', () => {
 
 // routes
 
-app.use('/api', loginSignupRoutes);
+app.use(loginSignupRoutes);
 app.use('/api', userRoutes);
 app.use('/api', postRoutes);
 app.use('/api', itemRoutes);
