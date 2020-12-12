@@ -1,0 +1,83 @@
+.cartHeader{
+    margin-bottom: 30px; 
+}
+
+.cartTitle{
+    float:left;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.itemContainer{
+    margin-top: 20px;
+    left: 30%;
+    width: 80%;
+    float: left;
+}
+.cartList {
+    left: 30%;
+    right: 20px;
+    position: relative;
+    margin-bottom: 2%;
+    width: 80%;
+    min-height: 30%;
+}
+
+.toastTitle{
+    background: darkgray;
+}
+
+.cartItemButton{
+    position: relative;
+    width: 100%; /* fix later*/
+    right: 0px;
+    bottom: 0px;
+    background-color: lightcoral;
+}
+
+.cartItemButton:hover{
+    background-color: rgb(212, 92, 92);
+}
+
+.checkoutBut{
+    width: 350px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    position: relative;
+    left: 30%;
+}
+
+.total{
+    width: 350px;
+    margin-top: 10%;
+    position: relative;
+    left: 30%;
+}
+
+#orderInfoTitle {
+    background: lightgrey;
+}
+
+.orderInfoContainer {
+    width: 25%;
+    border-radius: 10px;
+    border: 3px solid lightgrey;
+    position: absolute;
+    left: 70%;
+    width: 350px;
+    margin-top: 80px;
+}
+
+.orderInfo {
+    height: 480px;
+}
+
+.orderInfoFields {
+    text-align: center;
+}
+
+
+/* .cartContentContainer {
+    float: right;
+} */

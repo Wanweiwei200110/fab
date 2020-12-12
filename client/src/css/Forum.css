@@ -1,0 +1,75 @@
+
+
+#postContainer {
+  width: 80%;
+  float: left;
+}
+
+#postButtons {
+  float: left;
+  margin: 50px;
+  text-align: center;
+}
+
+#collect {
+  color: white;
+}
+
+#newPostForm {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+}
+
+#fab {
+  position: absolute;
+  text-align: center;
+  font-size: 16vw;
+  color: #403f3e;
+}
+
+#fabImage {
+  width: 100%;
+  height: 50%;
+}
+
+
+#newPostButton {
+  float: left;
+  position: absolute;
+  bottom: 30%;
+  left: 30%;
+}
+
+#newItemForm {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+}
+
+.center {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.uploadBtn{
+  position: relative;
+  left: -20px;
+}
+
+.linkBtn{
+  margin-right: 10px;
+  display: block;
+  position: relative;
+  right: 0px;
+  margin-bottom: 2px;
+  background-color: white;
+  color: black;
+  padding: 3px;
+}
+
+.linkBtn:hover {
+  background-color: rgba(214, 214, 214, 0.836);
+}

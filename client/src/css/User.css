@@ -1,0 +1,57 @@
+#profilePic {
+    border-radius: 50%;
+}
+
+#editButton {
+    left: 100px;
+}
+
+#newItemButton {
+    margin-bottom: 20px;
+}
+
+.followingContainer {
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-height: 80px;
+    position: relative;
+}
+
+.profileContainer {
+    margin-top: 50px;
+    margin-left: 10%;
+}
+
+.followName{
+    margin-left: 10px;
+    display: block;
+    margin-top: 10px;
+}
+
+.unfollowButton{
+    background-color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: black;
+}
+
+.unfollowButton:hover{
+    background-color: aliceblue;
+}
+
+.followPic {
+    float: left;
+    position: relative;
+    margin: 10px; 
+    width: 50px;
+    border-radius: 5px;
+}
+
+.uploadBtn{
+    position: relative;
+    top: 15px;
+    margin-left: 30px;
+}
