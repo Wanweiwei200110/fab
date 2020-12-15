@@ -48,14 +48,14 @@ class Comments extends Component {
                             </button>
                         </Row>
                         : <div>
-                            <button className="commentButton" onClick={() => this.props.toggleVote(comment.upvoted, comment.downvoted, 'upvote', comment.id, index)}>
+                            <button className="commentButton" onClick={() => this.props.toggleVote(comment.upvoted, comment.downvoted, 'upvote', comment._id, index)}>
                                 {comment.upvoted ? <UpOne theme="filled" size="24" fill="#333"/> : <UpOne theme="outline" size="24" fill="#333" />}
                             </button>
                             <p className='commentButton'>{comment.votes}</p>
-                            <button className="commentButton" onClick={() => this.props.toggleVote(comment.upvoted, comment.downvoted, 'downvote', comment.id, index)}>
+                            <button className="commentButton" onClick={() => this.props.toggleVote(comment.upvoted, comment.downvoted, 'downvote', comment._id, index)}>
                                 {comment.downvoted ? <DownOne theme="filled" size="24" fill="#333"/> : <DownOne theme="outline" size="24" fill="#333" />}
                             </button>
-                            <button className="commentButton" onClick={(e) => this.reportComment(e, comment.id)}>
+                            <button className="commentButton" onClick={(e) => this.reportComment(e, comment._id)}>
                                 <Report theme="outline" size="24" fill="#333" />
                             </button>
                         </div>}
