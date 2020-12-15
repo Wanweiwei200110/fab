@@ -38,11 +38,11 @@ class Comments extends Component {
                     <div className="commentButtons">
                         {this.props.admin ? 
                         <Row>
-                            <button className="commentButton deleteBtn" onClick={(e) => this.props.deleteComment(e, comment.id)}>
+                            <button className="commentButton deleteBtn" onClick={(e) => this.props.deleteComment(e, comment._id)}>
                                 <Delete theme="outline" size="18" fill="#ffffff" /> {" "}
                                 Delete
                             </button>
-                            <button className="commentButton okBtn" onClick={(e) => this.props.unreportComment(e, comment.id)}>
+                            <button className="commentButton okBtn" onClick={(e) => this.props.unreportComment(e, comment._id)}>
                                 <EmotionHappy theme="outline" size="18" fill="#ffffff" /> {" "}
                                 Mark as ok
                             </button>
