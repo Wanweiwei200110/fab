@@ -16,7 +16,7 @@ class NewComment extends Component {
     handleSubmit = async (e) => {
         try {
             e.preventDefault()
-            const comment_response = await fetch('/' + this.props.post_id + '/comment', {
+            const comment_response = await fetch('/api' + this.props.post_id + '/comment', {
                 method: 'POST',
                 body: JSON.stringify({ 
                     author: this.state.user, 
