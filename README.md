@@ -1,6 +1,6 @@
 # team42
 
-Deployed website: https://csc309-fab.herokuapp.com
+Deployed website: https://fab2020.herokuapp.com
 
 **Dependencies:**
 
