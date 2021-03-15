@@ -1,4 +1,4 @@
-This website is a school project I developed in CSC309. This repository is a copy of the original private repository.
+This website is a school project I developed with [Xingye Chen](https://github.com/yecyec) in CSC309. This repository is a copy of the original private repository.
 
 # team42
 
