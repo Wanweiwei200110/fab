@@ -1,3 +1,5 @@
+This website is a school project I developed in CSC309. This repository is a copy of the original private repository.
+
 # team42
 
 Deployed website: https://fab2020.herokuapp.com
